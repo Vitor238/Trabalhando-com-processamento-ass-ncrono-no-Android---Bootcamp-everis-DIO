@@ -31,6 +31,8 @@
             tools:text="Hello World!" />
 
         <ProgressBar
+            android:visibility="gone"
+            tools:visibility="visible"
             android:id="@+id/progressbar_load_indicator"
             android:layout_width="42dp"
             android:layout_height="42dp"
