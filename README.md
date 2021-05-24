@@ -1,4 +1,5 @@
-# Understanding the Android Threading Model
+# Trabalhando com processamento assíncrono no Android - Bootcamp everis DIO
+Aplicativo do curso Trabalhando com processamento assíncrono no Android do [bootcamp everis Kotlin Developer](https://digitalinnovation.one/bootcamps/everis-kotlin-developer) na [Digital Innovation One](https://digitalinnovation.one/)
 
 Exercício prático sobre os modelos de Threads no Android exemplificado com a implementação de AsyncTask
 
