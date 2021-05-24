@@ -12,6 +12,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        button_load_data.setOnClickListener {
+            launchAstroTask()
+        }
     }
 
     fun showData(list: List<AstrosPeople>?) {
@@ -29,16 +32,27 @@ class MainActivity : AppCompatActivity() {
         progressbar_load_indicator.visibility = View.GONE
     }
 
+    fun launchAstroTask() {
+        val task = TaskAstros()
+        task.execute()
+    }
+
     inner class TaskAstros : AsyncTask<Void, Int, List<AstrosPeople>>() {
 
-        val repository = AstrosRepository()
+        private val repository = AstrosRepository()
 
         override fun onPreExecute() {
             super.onPreExecute()
             showLoadingIndicator()
         }
 
+        override fun onProgressUpdate(vararg values: Int?) {
+            super.onProgressUpdate(*values)
+
+        }
+
         override fun doInBackground(vararg params: Void?): List<AstrosPeople> {
+            onProgressUpdate()
             return repository.loadData()
         }
 
